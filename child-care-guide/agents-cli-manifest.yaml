@@ -1,0 +1,12 @@
+name: child-care-guide
+acli_version: 1.2.1
+agent_directory: app
+region: us-east1
+base_template: adk
+generated_at: '2026-08-06T21:27:35.664781+00:00'
+language: python
+create_params:
+  deployment_target: agent_runtime
+  cicd_runner: skip
+  is_a2a: true
+  agent_guidance_filename: GEMINI.md

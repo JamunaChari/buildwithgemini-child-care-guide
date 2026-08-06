@@ -1,0 +1,32 @@
+{
+  "eval_cases": [
+    {
+      "eval_case_id": "greeting",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "Hello, what can you help me with?"}]
+      }
+    },
+    {
+      "eval_case_id": "milestones_6mo",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "What physical and motor milestones should I expect for a 6-month-old, and what daily care steps and activities help support sitting up?"}]
+      }
+    },
+    {
+      "eval_case_id": "age_calculator",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "My baby was born on 2025-08-15. How old is my baby?"}]
+      }
+    },
+    {
+      "eval_case_id": "activities_toddler",
+      "prompt": {
+        "role": "user",
+        "parts": [{"text": "What are some fun sensory and motor activities for an 18-month-old toddler?"}]
+      }
+    }
+  ]
+}
