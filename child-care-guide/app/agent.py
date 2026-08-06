@@ -437,8 +437,34 @@ instruction = schema_manager.generate_system_prompt(
 )
 
 
+def get_about_littlesteps() -> str:
+    """Provides a brief description, mission statement, and features overview of the LittleSteps assistant.
+
+    Returns:
+        A formatted summary explaining LittleSteps' purpose, capabilities, and tailored features.
+    """
+    return (
+        "**👶 About LittleSteps - Child Care & Milestone Guide**\n\n"
+        "**Mission:**\n"
+        "LittleSteps is a personalized, AI-powered child care assistant created to empower parents and caregivers "
+        "with actionable developmental guidance, authentic regional nutrition, and active play ideas.\n\n"
+        "**Customized Child Profile:**\n"
+        "- **Toddler Girl:** Born May 8, 2024 (~27 months old)\n"
+        "- **Growth:** 3 ft 3 in (~99 cm) | 33.2 lbs (~15 kg)\n"
+        "- **Dietary Focus:** Authentic Karnataka Vegetarian Nutrition\n"
+        "- **Traits & Interests:** Super energetic, passionate book reader\n\n"
+        "**Key Features & Capabilities:**\n"
+        "1. 📈 **Developmental Milestones & Care:** Tracks pediatric physical, cognitive, and motor growth landmarks.\n"
+        "2. 🍲 **Karnataka Vegetarian Weekly Plans:** 7-day authentic meal plans featuring Ragi malt, Bisi Bele Bath, Akki Roti, Dosa, and vegetable porridges.\n"
+        "3. ⚡ **High-Energy Activity Guide:** Active sensory games and obstacle courses designed to channel energetic play constructively.\n"
+        "4. 🎨 **AI Activity Visual Cards:** Generates vibrant illustration cards for play guides using Gemini AI image models.\n"
+        "5. 📚 **Curated Book Recommendations:** Age-appropriate picture, lift-the-flap, and Indian heritage books.\n"
+        "6. 📝 **Persistent Milestone Logger:** Saves achieved developmental landmarks locally and in persistent storage."
+    )
+
+
 root_agent = Agent(
-    name="root_agent",
+    name="LittleSteps",
     model=Gemini(
         model=MODEL,
         retry_options=types.HttpRetryOptions(attempts=3),
@@ -455,6 +481,7 @@ root_agent = Agent(
         save_child_milestone_log,
         get_logged_child_milestones,
         generate_activity_visual_guide,
+        get_about_littlesteps,
     ],
     after_model_callback=a2ui_callback,
 )
